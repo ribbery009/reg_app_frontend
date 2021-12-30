@@ -1,0 +1,26 @@
+.formRow {
+
+
+  input,
+  &.checkoutInput select {
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 400;
+    text-align: left;
+    padding: 10px 5px;
+    margin: 30px auto;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    opacity: .8;
+
+
+
+    &:hover,&:focus{
+      opacity: 1;
+    }
+  }
+}
