@@ -1,0 +1,260 @@
+.formWrapper {
+
+    form{
+        padding:40px;
+    }
+    .email-form__input {
+        textarea {
+            overflow: hidden;
+        }
+
+        label,
+        span,
+        textarea {
+            color: white;
+            font-weight: 400;
+            font-size: 16px;
+        }
+    }
+
+    .MuiCardContent-root {
+        padding: 0;
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 530px;
+            top: 0;
+            right: 0;
+            display: block;
+            background-color: #111924;
+            opacity: 0.9;
+            z-index: -1;
+            -webkit-box-shadow: 0 0 2px color(formContent);
+            box-shadow: 0 0 2px color(formContent);
+
+            @media screen and (max-width: 700px) {
+               width:100%;
+            }
+        }
+    }
+    @media screen and (max-width: 650px) {
+        width: 400px !important;
+    }
+
+    box-shadow: none !important;
+
+    &.MuiPaper-root {
+        background-color: transparent;
+        padding: 0;
+
+        .MuiButton-root {
+            padding: 0px 20px;
+            height: 40px;
+            border: 1px solid #4f515b;
+            border-radius: 0px;
+            transition: none;
+            &:hover {
+                padding: 5px 20px;
+                border: 1px solid rgba(0, 0, 0, 0.87);
+                -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.87);
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0.87);
+                .send-text {
+                    border-right: 1px solid rgba(0, 0, 0, 0.87);
+                }
+            }
+        }
+
+        .form__textarea-wrapper {
+            h3 {
+                color: white;
+                margin-bottom: 20px;
+                margin-top: 40px;
+                font-size: 36px;
+            }
+            textarea {
+                padding: 9px;
+                border: 1px solid color(formContent);
+                line-height: 20px;
+
+                &:hover,
+                &:focus {
+                    padding: 8px;
+                    border: 2px solid color(white);
+                }
+            }
+            .MuiInput-underline:before,
+            .MuiInput-underline:after {
+                content: unset;
+            }
+        }
+    }
+    .form__input-row {
+        margin: 10px;
+    }
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 2px solid white;
+}
+
+.otp-form {
+    .form-group {
+
+        &.street-number-container{
+        display:flex;
+
+        .col-street{
+width:80%;
+margin-right: 20px;
+
+@media screen and (max-width: 410px) {
+    width:60%;
+}
+
+        }
+
+        .col-number{
+            width:20%;
+
+            @media screen and (max-width: 410px) {
+                width:40%;
+            }
+        }
+        }
+        &.simplePay {
+            display: none;
+        }
+        label {
+            font-weight: 300;
+        }
+        input {
+            border: none;
+            border-bottom: 1px solid #4f515b;
+            border-radius: 0;
+            background: transparent;
+            &:focus {
+                box-shadow: none;
+                border-bottom: 1px solid color(second);
+            }
+            &.is-invalid {
+                box-shadow: none;
+            }
+        }
+    }
+    .formDescWrapper {
+        max-width: 500px;
+
+        &.otp {
+            margin-top: 50px;
+            color: color(dark);
+            font-weight: 300;
+
+            p,
+            li {
+                color: color(dark);
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 25px;
+                letter-spacing: 0.5px;
+                margin-top: 15px;
+                &.result {
+                    margin-top: 0px;
+                    font-weight: 300;
+                }
+            }
+
+            .selected-boxes-list {
+                list-style-type: none;
+
+                li > span {
+                    color: color(dark);
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+    .form-global {
+        max-width: 450px;
+    }
+
+    .buttonWrapper {
+        margin-top: 5rem;
+        display: flex;
+    justify-content: end;
+    }
+
+    .otpDesc {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        padding: 0;
+
+        .col-lg-6 {
+            padding: 0;
+        }
+
+        .simpleImg__container {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            a {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .simpleImg {
+                width: 200px;
+                max-width: 100%;
+                margin: 12px 0;
+            }
+        }
+
+        .payment-desc {
+            align-self: center;
+            padding: 0;
+
+            p {
+                font-size: 16px;
+                color: color(dark);
+            }
+
+            .simple-notice {
+                border: 2px solid black;
+                padding: 15px;
+                margin-bottom: 20px;
+                font-weight: 400;
+                font-size: 18px;
+                color: red;
+            }
+        }
+    }
+}
+
+.woutInvoice {
+    display: none;
+}
+
+.hiddenRadioButton {
+    display: none;
+}
+
+.button-wrapper{
+    justify-content: center;
+    display: flex;
+
+    button{
+        border-radius: 50px;
+        width:100%;
+    }
+
+    span{
+        letter-spacing: 1px;
+    text-transform: uppercase;
+    }
+}

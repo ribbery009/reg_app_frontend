@@ -1,9 +1,9 @@
-import React, { useState} from 'react';
-
+import React, { useState } from 'react';
+import './style.scss'
 //Components
-import AuthWrapper from './../../AuthWrapper/index';
-import FormInput from '../../../components/AuthWrapper/index';
 
+import FormInput from '../../../components/Sections/Form/FormInput/index';
+import AuthWrapper from '../../AuthWrapper/index'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -11,65 +11,69 @@ import Col from 'react-bootstrap/Col'
 
 const SignIn = props => {
 
- 
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false);
 
 
-//   useEffect(() => {
-//     if (currentUser) {
-//       resetForm();
-//       history.push('/');
-//     }
+  //   useEffect(() => {
+  //     if (currentUser) {
+  //       resetForm();
+  //       history.push('/');
+  //     }
 
-//   }, [currentUser]);
-
-
-
-//   const handleLogin = (e) => {
-//     e.preventDefault();
+  //   }, [currentUser]);
 
 
-//     setLoading(true);
 
-//     //form.current.validateAll();
-
-//     if (true) {
-//       dispatch(login(email, password))
-//         .then(() => {
-        
-//            history.push("/");
-//           // window.location.reload();
-//         })
-//         .catch(() => {
-//           setLoading(false);
-//         });
-//     } else {
-//       setLoading(false);
-//     }
-//   };
+  //   const handleLogin = (e) => {
+  //     e.preventDefault();
 
 
-//   const resetForm = () => {
-//     setEmail('');
-//     setPassword('');
-//   };
+  //     setLoading(true);
 
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     // dispatch(emailSignInStart({ email, password }));
-//   }
+  //     //form.current.validateAll();
+
+  //     if (true) {
+  //       dispatch(login(email, password))
+  //         .then(() => {
+
+  //            history.push("/");
+  //           // window.location.reload();
+  //         })
+  //         .catch(() => {
+  //           setLoading(false);
+  //         });
+  //     } else {
+  //       setLoading(false);
+  //     }
+  //   };
+
+
+  //   const resetForm = () => {
+  //     setEmail('');
+  //     setPassword('');
+  //   };
+
+  //   const handleSubmit = e => {
+  //     e.preventDefault();
+  //     // dispatch(emailSignInStart({ email, password }));
+  //   }
 
 
   return (
     <div className="waveWrapper waveAnimation">
-    
+
       <Container>
         <Row>
           <Col>
             <AuthWrapper>
               <div className="formWrap">
+                <button>
+                  <h1 className='login-title'>LOGIN</h1>
+                </button>
+
                 <form >
 
                   <div className="input-wrapper">
@@ -93,15 +97,15 @@ const SignIn = props => {
                       handleChange={e => setPassword(e.target.value)}
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group button-wrapper">
                     <button className="btn btn-primary btn-block" disabled={loading}>
                       {loading && (
                         <span className="spinner-border spinner-border-sm"></span>
                       )}
-                      <span>Login</span>
+                      <span>Bejelentkezés</span>
                     </button>
                   </div>
-                
+
                 </form>
               </div>
             </AuthWrapper>
