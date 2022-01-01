@@ -5,6 +5,7 @@
   margin: 4rem auto 6rem;
   background: #dde5f4;
   border-radius: 15px;
+    box-shadow: 0 0 40px rgba(30, 31, 45, 0.15);
 
   form{
     padding: 40px;
@@ -23,12 +24,16 @@ position: absolute;
     margin-top: 13px;
   }
   .wrap {
+    border-radius: 15px;
+    overflow: hidden;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+padding:0;
 
+background: linear-gradient(180deg, rgba(200,221,255,1) 0%, rgba(155,197,255,1) 82%);
     .logo-form{
       max-width: 200px;
   }

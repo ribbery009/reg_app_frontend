@@ -2,19 +2,33 @@ import React, { useState } from 'react';
 import './style.scss'
 //Components
 
-import FormInput from '../../../components/Sections/Form/FormInput/index';
-import AuthWrapper from '../../AuthWrapper/index'
-
+import AuthWrapper from '../../AuthWrapper/index';
+import RegForm from '../Form/RegForm';
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import LogForm from '../Form/LoginForm';
 
 const SignIn = props => {
 
+  const [formsState, setFormState] = useState(0);
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false);
+
+
+  const handleClick = (e) => {
+
+
+    // Megvizsgálom, melyik formtól jött a click esemény
+    if (!e.target || !e.target.attributes || !e.target.attributes[0].nodeValue) {
+      return
+    }
+    else if (e.target.attributes[0].nodeValue == "reg-title") {
+      setFormState(0);
+    }
+    else if (e.target.attributes[0].nodeValue == "login-title") {
+      setFormState(1);
+    }
+  }
 
 
   //   useEffect(() => {
@@ -67,60 +81,21 @@ const SignIn = props => {
 
       <Container>
         <Row>
-          <Col>
+          <Col className='col-wrapper'>
             <AuthWrapper>
               <div className="formWrap">
-                <button>
-                  <h1 className='login-title'>LOGIN</h1>
-                </button>
-
-                <form >
-
-                  <div className="input-wrapper">
-                    <span className="input-icon"></span>
-                    <FormInput
-                      type="name"
-                      name="name"
-                      value={email}
-                      placeholder="Email"
-                      handleChange={e => setEmail(e.target.value)}
-                    />
-                  </div>
-
-                  <div className="input-wrapper">
-                    <span className="input-icon"></span>
-                    <FormInput
-                      type="password"
-                      name="password"
-                      value={password}
-                      placeholder="Password"
-                      handleChange={e => setPassword(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group button-wrapper">
-                    <button className="btn btn-primary btn-block" disabled={loading}>
-                      {loading && (
-                        <span className="spinner-border spinner-border-sm"></span>
-                      )}
-                      <span>Bejelentkezés</span>
-                    </button>
-                  </div>
-
-                </form>
+                <div className={`reg-wrapper ${formsState==0 ? "active" : 'inActive'}`}>
+                  <RegForm handleClick={handleClick} />
+                </div>
+                <div className={`login-wrapper ${formsState==1 ? "active" : 'inActive'}`}>
+                  <LogForm handleClick={handleClick} />
+                </div>
               </div>
             </AuthWrapper>
           </Col>
         </Row>
       </Container>
-      <div className="waveWrapperInner bgTop">
-        <div className="wave waveTop"></div>
-      </div>
-      <div className="waveWrapperInner bgMiddle">
-        <div className="wave waveMiddle"></div>
-      </div>
-      <div className="waveWrapperInner bgBottom">
-        <div className="wave waveBottom"></div>
-      </div>
+
 
     </div>
   )

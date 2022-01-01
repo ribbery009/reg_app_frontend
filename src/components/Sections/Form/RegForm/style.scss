@@ -1,0 +1,31 @@
+.reg-wrapper{
+    transition: .8s ease-in-out;
+    border-radius: 60% / 10%;
+
+   .reg-title{
+        color: #0c1119 ;
+        letter-spacing: 1px;
+        font-weight: 600;
+    font-size: 35px;
+    }
+    &.active{
+
+        button{
+            h1{
+            
+            }
+            }
+    }
+    &.inActive{
+
+    
+
+
+        button{
+        .reg-title{
+            transform: scale(.6);
+          
+        }
+        }
+        }
+}

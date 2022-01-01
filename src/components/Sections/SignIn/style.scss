@@ -1,4 +1,26 @@
 .waveWrapper{
-height: 100vh;
-background: #f1f7fe;
+min-height: 100vh;
+background: linear-gradient(180deg, rgba(200,221,255,1) 0%, rgba(155,197,255,1) 82%);
+
+.col-wrapper{
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
 }
+.formWrap{
+    height: 550px;
+}
+.btn-wrapper{
+    display: flex;
+    justify-content: center;
+
+    button{
+        background: transparent;
+    border: none;
+    h3{
+        transition: .5s ease-in-out;
+    }
+    }
+}
+}
+
